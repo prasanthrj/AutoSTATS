@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  release_ID: 1
+  project_ID: 1
+  release_start_date: 2013-12-10
+  release_end_date: 2013-12-10
+  release_status: MyString
+
+two:
+  release_ID: 1
+  project_ID: 1
+  release_start_date: 2013-12-10
+  release_end_date: 2013-12-10
+  release_status: MyString
