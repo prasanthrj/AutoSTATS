@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Release id:</b>
+  <%= @run.release_ID %>
+</p>
+
+<p>
+  <b>Project id:</b>
+  <%= @run.project_ID %>
+</p>
+
+<p>
+  <b>Module name:</b>
+  <%= @run.module_name %>
+</p>
+
+<p>
+  <b>Test case name:</b>
+  <%= @run.test_case_name %>
+</p>
+
+<p>
+  <b>Test case id:</b>
+  <%= @run.test_case_ID %>
+</p>
+
+<p>
+  <b>Test result:</b>
+  <%= @run.test_result %>
+</p>
+
+<p>
+  <b>Browser:</b>
+  <%= @run.browser %>
+</p>
+
+
+<%= link_to 'Edit', edit_run_path(@run) %> |
+<%= link_to 'Back', runs_path %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  release_ID: 1
+  project_ID: 1
+  module_name: MyString
+  test_case_name: MyString
+  test_case_ID: MyString
+  test_result: MyString
+  browser: MyString
+
+two:
+  release_ID: 1
+  project_ID: 1
+  module_name: MyString
+  test_case_name: MyString
+  test_case_ID: MyString
+  test_result: MyString
+  browser: MyString

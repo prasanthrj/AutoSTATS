@@ -1,0 +1,35 @@
+<h3 align = "center">Automation Test Runs</h3>
+
+<table class="table-striped table-bordered table-condensed ">
+  <tr>
+    <th>Release id</th>
+    <th>Project id</th>
+    <th>Module name</th>
+    <th>Test case name</th>
+    <th>Test case id</th>
+    <th>Test result</th>
+    <th>Browser</th>
+    <th>Actions</th>
+    <th>Actions</th>
+    <th>Actions</th>
+  </tr>
+
+<% @runs.each do |run| %>
+  <tr>
+    <td><%= run.release_ID %></td>
+    <td><%= run.project_ID %></td>
+    <td><%= run.module_name %></td>
+    <td><%= run.test_case_name %></td>
+    <td><%= run.test_case_ID %></td>
+    <td><%= run.test_result %></td>
+    <td><%= run.browser %></td>
+    <td><%= link_to 'Show', run %></td>
+    <td><%= link_to 'Edit', edit_run_path(run) %></td>
+    <td><%= link_to 'Destroy', run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Run', new_run_path %>

@@ -1,4 +1,7 @@
 AutoSTATS::Application.routes.draw do
+  resources :runs
+
+
   resources :releases
 
 
