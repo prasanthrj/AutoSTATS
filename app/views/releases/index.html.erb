@@ -1,3 +1,22 @@
+<script type = "text/javascript">
+
+$(document).ready(function () {
+  $('.pagination .previous_page').text('«');
+  $('.pagination .next_page').text('»');
+
+  $('.pagination').each(function () {
+    var $bar = $(this);
+    $bar.find('a, .current, span').wrapAll('<ul>');
+    $bar.find('a, .current, span').wrap('<li>');
+
+    $bar.find('em').each(function () {
+      $(this).parent().addClass('disabled');
+      $(this).replaceWith('<a href="#">' + $(this).text() + '</a>');
+    });
+  });
+});
+</script>
+
 <h1>Listing releases</h1>
 
 <table class ="table table-striped table-bordered table-condensed" >
@@ -28,4 +47,11 @@
 
 <br />
 
-<%= link_to 'New Release', new_release_path %>
+<div class='pagination'>
+
+<%= will_paginate @releases %>
+
+</div>
+
+<%= button_to "New Release", new_release_path, :class=>"btn btn-success" , :method => :get  %><br />
+<!-- <%= link_to 'New Release', new_release_path %>  -->

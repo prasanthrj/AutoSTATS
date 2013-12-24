@@ -32,6 +32,9 @@
     <%= f.text_field :release_status %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+
+    <%= f.submit 'Create New' , :class=>'btn btn-success' %>
+    <%= button_to 'Back', releases_path ,:class=>"btn button-new" %>
+
   </div>
 <% end %>

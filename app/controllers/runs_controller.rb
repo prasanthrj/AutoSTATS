@@ -2,7 +2,7 @@ class RunsController < ApplicationController
   # GET /runs
   # GET /runs.json
   def index
-    @runs = Run.all
+    @runs = Run.paginate(:page => params[:page] , :per_page => 5)
 
     respond_to do |format|
       format.html # index.html.erb

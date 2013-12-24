@@ -4,13 +4,15 @@ gem 'rails', '4.0.2'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'devise', '3.0.0.rc' 
 gem 'protected_attributes'
+gem 'will_paginate', '~> 3.0'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
 
-#gem 'mysql2', '~> 0.3.11'
+#gem 'mysql2', '~> 0.3.14'
 
 # Gem files for Twitter bootstarp framework
 
