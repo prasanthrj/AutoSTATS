@@ -1,5 +1,12 @@
 
 <h3 align = "center"> All projects </h1>
+<hr>
+<p>
+  <%=link_to "Download as CSV", projects_path(format:"csv")%> |
+  <%=link_to "Download as Excel", projects_path(format:"xls")%>
+</p>
+
+<br>
 
 <table class="table-striped table-bordered table-condensed" >
   <tr>
@@ -22,3 +29,5 @@
 
 <%= will_paginate @projects %>
 <%= button_to 'New Project', new_project_path , :class=>"btn btn-success" , :method => :get%>
+
+

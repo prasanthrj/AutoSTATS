@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String"> Test Run ID</Data></Cell>
+        <Cell><Data ss:Type="String">Project ID</Data></Cell>
+        <Cell><Data ss:Type="String">Release ID</Data></Cell>
+        <Cell><Data ss:Type="String">Module Name</Data></Cell>
+        <Cell><Data ss:Type="String">Test Case Name</Data></Cell>
+        <Cell><Data ss:Type="String">Test Case Result</Data></Cell>
+        <Cell><Data ss:Type="String">Browser</Data></Cell>
+        <Cell><Data ss:Type="String">Updated Time</Data></Cell>
+      </Row>
+    <% @runs.each do |run| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= run.id %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= run.release_ID %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= run.project_ID %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= run.module_name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= run.test_case_name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= run.test_result %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= run.browser %></Data></Cell>
+        <Cell><Data ss:Type="Date"><%= run.created_at %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

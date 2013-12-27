@@ -7,6 +7,9 @@ class RunsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @runs }
+      format.xls
+      format.csv {send_data @runs.to_csv }
+      
     end
   end
 

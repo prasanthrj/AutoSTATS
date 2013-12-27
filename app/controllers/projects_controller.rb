@@ -7,6 +7,9 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @projects }
+      format.csv { send_data @projects.to_csv}
+      format.xls # {send_data @projects.to_csv(col_sep :" \t")}
+      
     end
   end
 

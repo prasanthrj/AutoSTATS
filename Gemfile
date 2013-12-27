@@ -4,8 +4,15 @@ gem 'rails', '4.0.2'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'devise', '3.0.0.rc' 
 gem 'protected_attributes'
+
+# Pagination API gem
+
 gem 'will_paginate', '~> 3.0'
 
+# Excel Plugin to generate xL data
+
+#gem 'acts_as_xlsx'
+#gem 'nokogiri','1.6.1.pre'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
