@@ -1,6 +1,7 @@
 class Run < ActiveRecord::Base
-  attr_accessible :browser, :module_name, :project_ID, :release_ID, :test_case_ID, :test_case_name, :test_result
-
+	belongs_to :release
+    attr_accessible :browser, :module_name, :project_ID, :release_ID, :test_case_ID, :test_case_name, :test_result
+    validates :test_case_name, presence: true
 def self.to_csv(options = {})
   CSV.generate(options) do |csv|
     csv << column_names

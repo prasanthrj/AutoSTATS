@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
+
+
   def index
     @projects = Project.paginate(:page => params[:page] , :per_page => 5)
 
@@ -9,9 +11,23 @@ class ProjectsController < ApplicationController
       format.json { render json: @projects }
       format.csv { send_data @projects.to_csv}
       format.xls # {send_data @projects.to_csv(col_sep :" \t")}
+      format.xml {render xml: @projects.to_xml }
       
     end
   end
+
+  def api
+
+     @project = Project.find(params[:id])
+
+    respond_to do |format|
+
+      format.json { render json: @project }
+
+    end
+
+  end
+
 
   # GET /projects/1
   # GET /projects/1.json
@@ -21,6 +37,7 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @project }
+
     end
   end
 
@@ -58,6 +75,7 @@ class ProjectsController < ApplicationController
 
   # PUT /projects/1
   # PUT /projects/1.json
+
   def update
     @project = Project.find(params[:id])
 

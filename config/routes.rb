@@ -1,8 +1,19 @@
 AutoSTATS::Application.routes.draw do
+  
   resources :runs
   resources :releases
-  resources :projects
+  resources :prorels
+ 
+
+  resources :projects do
+    collection do
+      get 'api'
+          end
+                     end
+
   resources :trends
+
+
 
 
   # The priority is based upon order of creation:

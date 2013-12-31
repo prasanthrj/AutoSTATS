@@ -9,28 +9,28 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131211094439) do
+ActiveRecord::Schema.define(version: 20131211094439) do
 
-  create_table "projects", :force => true do |t|
+  create_table "projects", force: true do |t|
     t.string   "project_name"
     t.string   "project_description"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
-  create_table "releases", :force => true do |t|
+  create_table "releases", force: true do |t|
     t.integer  "release_ID"
     t.integer  "project_ID"
     t.date     "release_start_date"
     t.date     "release_end_date"
     t.string   "release_status"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
-  create_table "runs", :force => true do |t|
+  create_table "runs", force: true do |t|
     t.integer  "release_ID"
     t.integer  "project_ID"
     t.string   "module_name"
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(:version => 20131211094439) do
     t.string   "test_case_ID"
     t.string   "test_result"
     t.string   "browser"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
 end

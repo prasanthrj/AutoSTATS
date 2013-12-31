@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+	has_many :releases
   attr_accessible :project_description, :project_name
 
   def self.to_csv(options = {})
