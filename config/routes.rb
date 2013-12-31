@@ -1,11 +1,8 @@
 AutoSTATS::Application.routes.draw do
   resources :runs
-
-
   resources :releases
-
-
   resources :projects
+  resources :trends
 
 
   # The priority is based upon order of creation:

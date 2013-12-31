@@ -9,6 +9,11 @@ gem 'protected_attributes'
 
 gem 'will_paginate', '~> 3.0'
 
+
+# Gem file for google charts
+
+gem "googlecharts", :require => "gchart"
+
 # Excel Plugin to generate xL data
 
 #gem 'acts_as_xlsx'
