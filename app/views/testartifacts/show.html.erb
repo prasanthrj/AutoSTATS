@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @testartifact.name %>
+</p>
+
+<p>
+  <strong>Module:</strong>
+  <%= @testartifact.module %>
+</p>
+
+<p>
+  <strong>Application id:</strong>
+  <%= @testartifact.application_ID %>
+</p>
+
+<p>
+  <strong>Testcase id:</strong>
+  <%= @testartifact.testcase_ID %>
+</p>
+
+<p>
+  <strong>Automation id:</strong>
+  <%= @testartifact.automation_ID %>
+</p>
+
+<%= link_to 'Edit', edit_testartifact_path(@testartifact) %> |
+<%= link_to 'Back', testartifacts_path %>

@@ -1,0 +1,37 @@
+<%= form_for(@testartifact) do |f| %>
+  <% if @testartifact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@testartifact.errors.count, "error") %> prohibited this testartifact from being saved:</h2>
+
+      <ul>
+      <% @testartifact.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :module %><br>
+    <%= f.text_field :module %>
+  </div>
+  <div class="field">
+    <%= f.label :application_ID %><br>
+    <%= f.number_field :application_ID %>
+  </div>
+  <div class="field">
+    <%= f.label :testcase_ID %><br>
+    <%= f.text_field :testcase_ID %>
+  </div>
+  <div class="field">
+    <%= f.label :automation_ID %><br>
+    <%= f.text_field :automation_ID %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

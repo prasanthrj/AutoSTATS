@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131211094439) do
+ActiveRecord::Schema.define(version: 20140102103724) do
 
   create_table "projects", force: true do |t|
     t.string   "project_name"
@@ -40,6 +40,25 @@ ActiveRecord::Schema.define(version: 20131211094439) do
     t.string   "browser"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "testartifacts", force: true do |t|
+    t.string   "name"
+    t.string   "module"
+    t.integer  "application_ID"
+    t.string   "testcase_ID"
+    t.string   "automation_ID"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "testcases", force: true do |t|
+    t.string   "name"
+    t.string   "module"
+    t.string   "testCase_ID"
+    t.string   "automation_ID"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

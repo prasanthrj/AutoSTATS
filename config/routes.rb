@@ -1,5 +1,9 @@
 AutoSTATS::Application.routes.draw do
-  
+
+   resources :testartifacts do
+    collection { post :import }
+  end
+
   resources :runs
   resources :releases
   resources :prorels
