@@ -4,7 +4,8 @@ class ProrelsController < ActionController::Base
 
 	type = params[:project]
 
-    @projects = Release.where("project_ID = ?", type ).take.release_ID;
+    #@projects = Release.where("project_ID = ?", type ).take.release_ID;
+    @project = Release.where("project_ID = ?",type);
 
     end
 end

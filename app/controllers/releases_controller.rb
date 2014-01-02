@@ -4,6 +4,8 @@ class ReleasesController < ApplicationController
   def index
     # @releases = Release.all
 
+    @projects = Project.all
+
     @releases = Release.paginate(:page => params[:page] , :per_page => 5)
 
     respond_to do |format|

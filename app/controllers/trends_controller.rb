@@ -5,12 +5,12 @@ class TrendsController < ApplicationController
 
     @runs = Run.paginate(:page => params[:page] , :per_page => 5)
 
-    respond_to do |format|
+      respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @runs }
 
      # @test = Project.where(:id=>10) 
-      @test = Run.where("project_ID = ? AND browser = ? ", 1, "Chrom" ).take.test_case_ID;
+      @test = Run.where("project_ID = ?", 18).take.test_case_ID;
       
      
       @run_count = Run.count;

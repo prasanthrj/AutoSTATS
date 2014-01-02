@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.paginate(:page => params[:page] , :per_page => 5)
 
-    respond_to do |format|
+      respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @projects }
       format.csv { send_data @projects.to_csv}

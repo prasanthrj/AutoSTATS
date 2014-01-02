@@ -8,9 +8,8 @@ AutoSTATS::Application.routes.draw do
   resources :projects do
     collection do
       get 'api'
-          end
+               end
                      end
-
   resources :trends
 
 

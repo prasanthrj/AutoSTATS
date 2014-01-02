@@ -1,7 +1,32 @@
 <h1>
 
-test index Test Total <%= @projects %>
+index Test Total <%= @project.take.release_ID %> 
 
 </h1>
+
+<div>
+<table class="table-striped table-bordered table-condensed" >
+  <tr>
+  	<th>Project ID</th>
+	<th>Release ID</th>
+	<th>Relesase Start Date</th>
+	<th>Release End Date</th>
+	<th>Create Time</th>
+	<th>Updated Time</th>
+  </tr>
+  <% @project.each do |project| %>
+  <tr>
+  	<td><%= project.project_ID %></td>
+    <td><%= project.release_ID %></td>
+    <td><%= project.release_start_date %></td>
+    <td><%= project.release_end_date %></td>
+    <td><%= project.release_status %></td>
+    <td><%= project.created_at %></td>
+    <td><%= project.updated_at %></td>
+  </tr>
+  <% end %>
+</table>
+</div>
+
 
 
