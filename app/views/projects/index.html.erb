@@ -1,6 +1,14 @@
 
 <h3 align = "center"> All projects </h1>
 <hr>
+
+<%=link_to "Test Plan", "/testartifacts/"%> ||
+<%=link_to "All Plans", "/testplans/"%> ||
+<%=link_to "Add Plans", "/testplans/new"%> || 
+<%=link_to "Create Plans", "/testartifacts/createnewplan"%> || 
+<%=link_to "Download Plan" ,"/testplans/download"%>
+
+<hr>
 <p>
   <%=link_to "Download as CSV", projects_path(format:"csv")%> |
   <%=link_to "Download as Excel", projects_path(format:"xls")%>
@@ -17,7 +25,7 @@
 
 <% @projects.each do |project| %>
   <tr>
-    <td><%= project.project_name %></td>
+    <td><%= link_to "#{project.project_name}", "/projects/"+"#{project.id}"%></td>
     <td><%= project.project_description %></td>
     <td><%= link_to 'Show', project %></td>
     <td><%= link_to 'Edit', edit_project_path(project) %></td>

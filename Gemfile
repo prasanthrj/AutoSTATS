@@ -13,6 +13,7 @@ gem 'will_paginate', '~> 3.0'
 # Gem file for google charts
 
 gem "googlecharts", :require => "gchart"
+gem 'nokogiri'
 
 # Excel Plugin to generate xL data
 

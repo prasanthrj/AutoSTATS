@@ -1,0 +1,47 @@
+<h3 align = "center">Create New Test plan</h3>
+<hr>
+<div clas= "continer">
+  <form action="/testplans" class="create" method="post">
+ <label> Plan Name </label>
+ <input type = "text", title ="text plan name", name = "testplan[testplan_Id]">
+ <label> Plan Type </label>
+ <input type = "text", title ="test plan type", name = "testplan[testplan_type]">
+ <p>
+ <input name="commit" type="submit" value="Create" />
+</div>
+<hr>
+<form>
+<table class="table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th> Add </th>
+      <th>Test Case Name</th>
+      <th>Module</th>
+      <th>Application ID</th>
+      <th>Testcase ID </th>
+      <th>Automation ID </th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @testartifacts.each do |testartifact| %>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td><%= testartifact.name %></td>
+        <td><%= testartifact.module %></td>
+        <td><%= testartifact.application_ID %></td>
+        <td><%= testartifact.testcase_ID %></td>
+        <td><%= testartifact.automation_ID %></td>
+        <td><%= link_to 'View', testartifact , data: { alert: 'Successfully Added' } %></td>
+        <td><%= link_to 'Add', add_testartifact_path(:id => testartifact.id),:method => :get, 
+        :remote =>true %></td>
+        <td><%= link_to 'Delete', testartifact, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</form>

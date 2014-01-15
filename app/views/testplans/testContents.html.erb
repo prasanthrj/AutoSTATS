@@ -1,0 +1,30 @@
+<h1>Test Plan contents</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Application</th>
+      <th>Testplan name</th>
+      <th>Pid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @testplans.each do |testplan| %>
+      <tr>
+        <td><%= testplan.application_id %></td>
+        <td><%= testplan.testplan_name %></td>
+        <td><%= testplan.pid %></td>
+        <td><%= link_to 'Show', testplan %></td>
+        <td><%= link_to 'Edit', edit_testplan_path(testplan) %></td>
+        <td><%= link_to 'Destroy', testplan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Testplan', new_testplan_path %>

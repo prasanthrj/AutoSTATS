@@ -1,0 +1,42 @@
+<h1>Listing testplans</h1>
+
+<div clas= "continer">
+  <form action="/testplans/testContents" class="show" method="get">
+ <label> Plan Name </label>
+ <input type = "text", title ="Application name", name = "Application_Id">
+ <label> Plan Type </label>
+ <input type = "text", title ="test plan type", name = "testplan_type">
+ <p>
+ <input name="commit" type="submit" value="show"/>
+</div>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Application</th>
+      <th>Testplan name</th>
+      <th>Pid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @testplans.each do |testplan| %>
+      <tr>
+        <td><%= testplan.application_id %></td>
+        <td><%= testplan.testplan_name %></td>
+        <td><%= testplan.pid %></td>
+        <td><%= link_to 'Show', testplan %></td>
+        <td><%= link_to 'Edit', edit_testplan_path(testplan) %></td>
+        <td><%= link_to 'Destroy', testplan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Testplan', new_testplan_path %>

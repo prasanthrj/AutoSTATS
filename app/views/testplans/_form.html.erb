@@ -1,0 +1,29 @@
+<%= form_for(@testplan) do |f| %>
+  <% if @testplan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@testplan.errors.count, "error") %> prohibited this testplan from being saved:</h2>
+
+      <ul>
+      <% @testplan.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :application_id %><br>
+    <%= f.text_field :application_id %>
+  </div>
+  <div class="field">
+    <%= f.label :testplan_name %><br>
+    <%= f.text_field :testplan_name %>
+  </div>
+  <div class="field">
+    <%= f.label :pid %><br>
+    <%= f.text_field :pid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

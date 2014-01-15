@@ -1,8 +1,22 @@
 AutoSTATS::Application.routes.draw do
 
+  resources :testplans do
+  collection { get :testContents }
+  collection { get :download }
+end
+
    resources :testartifacts do
+
     collection { post :import }
+    collection { get :createnewplan }
+
   end
+
+  resources :testartifacts do
+  member do
+  get 'add'
+ end
+ end
 
   resources :runs
   resources :releases

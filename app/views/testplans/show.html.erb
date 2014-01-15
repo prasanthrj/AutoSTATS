@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Application:</strong>
+  <%= @testplan.application_id %>
+</p>
+
+<p>
+  <strong>Testplan name:</strong>
+  <%= @testplan.testplan_name %>
+</p>
+
+<p>
+  <strong>Pid:</strong>
+  <%= @testplan.pid %>
+</p>
+
+<%= link_to 'Edit', edit_testplan_path(@testplan) %> |
+<%= link_to 'Back', testplans_path %>

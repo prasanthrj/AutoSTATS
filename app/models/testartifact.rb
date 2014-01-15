@@ -3,7 +3,6 @@ class Testartifact < ActiveRecord::Base
 	require 'CSV'
 	attr_accessible :name, :module, :application_ID , :testcase_ID , :automation_ID
 
-
     def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
 

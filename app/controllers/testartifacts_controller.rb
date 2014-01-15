@@ -6,6 +6,32 @@ class TestartifactsController < ApplicationController
     @testartifacts = Testartifact.paginate(:page => params[:page] , :per_page => 25)
   end
 
+  # GET / create new plan
+
+  def createnewplan
+    
+    @testartifacts = Testartifact.paginate(:page => params[:page] , :per_page => 500)
+
+  end
+
+  # add Testcases to new test plan
+  
+
+  def add
+   
+
+    @tid = Testartifact.find(params[:id]).id.to_s
+    plan = Testplan.create(testplan_name:"LCOM Regression",pid:@tid ,application_id:Testartifact.find(params[:id]).application_ID.to_s)
+    plan.save
+
+    begin  
+
+     redirect_to "/testartifacts/createnewplan"+@tid , notice: "Testartifact was successfully created."
+   
+    end
+
+  end
+
 
   def import
     begin
