@@ -1,0 +1,9 @@
+--- 
+cursor_positions: 
+  - :path: app/controllers/application_controller.rb
+    :cursor_offset: 54
+    :timestamp: 2014-01-02 12:45:18.550000 +05:30
+  - :path: app/controllers/testplans_controller.rb
+    :cursor_offset: 303
+    :timestamp: 2014-01-16 14:27:40.968000 +05:30
+files_to_retain: 0

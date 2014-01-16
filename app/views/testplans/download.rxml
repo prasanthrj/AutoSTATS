@@ -1,0 +1,9 @@
+@xml.instruct! :xml, :version=>"1.0" 
+ 
+@xml.testplans{
+  for testplan in @testplans
+    @xml.testplan do
+      @xml.appid(testplan.application_id)
+      @xml.name(testplan.testplan_name)
+    end
+  end

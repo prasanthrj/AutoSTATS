@@ -1,6 +1,9 @@
 class RunsController < ApplicationController
   # GET /runs
   # GET /runs.json
+
+  skip_before_filter  :verify_authenticity_token
+  
   def index
     @runs = Run.paginate(:page => params[:page] , :per_page => 5)
 

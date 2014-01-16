@@ -1,5 +1,11 @@
+require 'active_support/builder' unless defined?(Builder)
+
+
 class TestplansController < ApplicationController
   before_action :set_testplan, only: [:show, :edit, :update, :destroy]
+
+ 
+require 'active_support/builder' unless defined?(Builder)
 
   # GET /testplans
   def index
@@ -21,6 +27,27 @@ class TestplansController < ApplicationController
   def download
 
     
+    @xml = Builder::XmlMarkup.new
+    @testplans = Testplan.all
+
+    respond_to do |format|
+
+      format.xml do  
+      stream = render_to_string(:xml => @testplans.to_xml )  
+      send_data(stream, :type=>"text/xml",:filename => "testplans.xml")
+                end
+     
+      format.html { render :html => @testplans.to_xml } 
+      format.json { render :json => @testplans.to_json }
+      # format.xml { send_file :xml => @testplans.to_xml , :filename => 'mydoc.xml', :type=>"application/xml", :disposition => 'attachment' }
+
+     end
+
+
+  # debugger
+
+   # render :text => MonkeyTalk.new(params).build_xml
+    
   end
 
 
@@ -36,6 +63,7 @@ class TestplansController < ApplicationController
 
   # GET /testplans/1/edit
   def edit
+
   end
 
   # POST /testplans
